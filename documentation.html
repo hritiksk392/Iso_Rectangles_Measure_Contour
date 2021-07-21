@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Design and Analysis of Algorithm Assignment 1 </title>
+	<style>
+	table, th, td {
+		border: 1px solid black;
+	}
+	th{
+		text-align :center;
+	}
+	img{
+		width : 50 px;
+		height: 50 px;
+	}
+	.center{
+		text-align: center;
+		display : block;
+	}
+	.column {
+		float : left;
+		width : 25%;
+		padding : 125px;
+	}
+	.row ::after {
+		content :"";
+		clear : both;
+		display : table;
+
+	}
+
+	</style>
+
+</head>
+
+<body text="black" >
+	<div id="header" style="background-color : white;">
+		<h1 align="center">Design and Analysis of Algorithm Assignment 1</h1>
+		<p align="center">BY</p>
+		<p align="center">Akshit (2018A7PS0187H)</p>
+		<p align="center">Hritik Singh Kushwah (2018A7PS0323H)</p>
+		<p align="center">Shubham Asopa (2018A7PS0101H)</p>
+		<p align="center">Smiket Barodia (2018A7PS0231H)</p>
+
+		<p align="center"><h2 align="center"><u>Finding Measure and Contour of n iso-rectangle using Divide and Conquer strategy</u></h2></p>
+
+		<h2>Introduction</h2>
+		For this assignment, we try to find N iso-rectangles's measure and contour. Earlier, these problems were solved using line-sweep algorithms with higher time complexities ( O(nlogn) for measure and O(nlogn + plog(2n^2/p)) for Contour). In this assignment, we use the divide and conquer strategy proposed by Ralf Hartmut Guting to find more optimal solution. <br>As both the problems deal with the union of rectangles, we solve this problem using an abstract data structure called  <b> STRIPE </b>, which uses divide and conquer with 'separational representation'.
+		<br>
+		We have created two files <b>iso_M.cpp</b> which solves the measure problem and <b>iso_Contour.cpp</b> which solves contour problem.
+		<br>
+		There are two extra header files "geo.h" and "helper.h" whose explanation given in doxygen. Visuzalisation is done using python matplotlib library with code implemented in 'Visualization.ipynb'.
+		<p>
+
+		</p>
+
+		<h2>General Discussion on the Algorithm</h2>
+		<p>
+			<p>
+				Both problems can be solved by creating abstract data structure STRIPES. We first find frame which encloses all rectangles and
+				and get all vertical edges of all rectangles. We then generate Stripes using recursive divide and conquer strategy.
+				Stripe implementation although looks same but have different implementation for different problem.<br>
+				For both problem we assume the x union which is disjoint x interval intersecting with n rectangles calculated differently.
+				<br>
+				<h4> Stripe Algorithm can be divided into 4 Parts</h4>
+				<li>Base case: if Vertical edge has only 1 edge then we can generate stripe for 1 vertical edge in O(1) time</li>
+				<li>Divide: For n>1 we divide the vertical edges into two equal size into left and right sets by finding a median x-coordinate </li>
+				<li>Conquer: We solve separately for each set of vertical edges </li>
+				<li>Merge: We merge the List of Left vertical edge on left Stripe and Right Vertical edges on Right Stripe and y projections of both sides. Merge part can be further divided into three parts:
+					<ol>
+						<li>Copy() = Makes finer partition for left and right side stripes. TC = O(n) / TC =O(nlogn) when set is used</li>
+						<li> Blacken() = If For Sleft There exists a Right edge which does no have it's partner in Sleft then it's partner must be in SRight.Hence the Right edge's xunion = x_interval<br>
+							Similarly if Sright has a Left edge which does not have it's partner, then that stripeM must be blackened. TC = O(n) </li>
+							<li>Concat() : Concatenate two vector of Stripes. As both stripeM will have same partition of Y coordinates and sorted from Copy() method it can be done in 1 loop for all partitions .TC = O(n) </li>
+						</ol>
+					</li>
+				</p>
+
+				<h3>
+					Explanation of Measure Problem
+				</h3>
+
+				<p>
+					Measure problem focuses on finding the area of union of n rectangles. We choose a predefined frame f which encloses all rectangles and create stripe for that frame. Each stripe consists of x_union which is in case of measure is the width of all disjoint x interval intersecting with n rectangles. Each stripe also has a definite y interval or height and we can find net area by summing intersecting area of all stripes.
+					Using divide and conquer , <b>time complexity is O(nlogn). </b>
+				</p><p>
+					for all Stripes S:
+					Sum( (measure(s . x_union)*(s.y_ interval.top - s.y_interval.bottom)))
+
+				</p>
+				<h3>
+					Explanation of Contour Problem
+				</h3>
+				<p>
+					Contour problem deals with finding set of countour cycles which are describes the boundary of union of all iso-rectangle.
+					Each stripe has x_union as a binary search tree which contain the intervals as its leaf having L,R denoting its sides.
+					<br>
+					We only find the horizontal edges in contour cycles by using data structure stripe. For every horizontal edge h we find appropriate stripe s which is not contain in its rectangle. For given stripe s and edge h we find free interval of h from s.x_union. <br><b>
+						interval J= (h.x_interval)\intersect(h . x _ interval,union(s . x_ union);</b>
+						<br>
+						We can solve this free sub-interval query for given range [x1,x2] using s.x_union BST finding x1 and x2 in O(logn) time and finding intersecting intervals p thus O(logn + p). Free Sub-interval constitute to horizontal edges of contour.
+						<br>
+						So total time complexity is <b> O(nlogn + p) with p pieces in final counter pieces </b>.
+
+					</p>
+					<h3>
+						Handling multiple x and y coordinates
+					</h3>
+					<p>
+						If there are multiple x coordinates issue comes during finding median to divide vertical edges into two. We may resolve this issue my placing left edge before a right edge having same x coordinate.<br>
+						For multiple y coordinates issue comes during finding intersection of two lists of y intervals and  finding those edges which have their own partner on same side. So to insure that same rectangle edges are removed we add an unique id number to given y interval which represents rectangle's number.
+					</p>
+
+					<!--			<br />-->
+
+					<h2>Issues in Coding</h2>
+					<p>
+						<ul>
+
+							<li>
+								For larger values n we are unable to visualize contours but only able to calculate measure and execution time of both algorithms and noted in time analysis section. This is due to high runtime by matplotlib in python to generate plots and Unable to distinguish different rectangles and contour in plot.
+							</li>
+							<li>
+								Issues were there will finding free subinterval query. We used preorder traversal for finding the leaf nodes with x_union intervals. It can be done using 1-D range query tree but that increases the complexity of code.
+							</li>
+							<li>
+								For finding vertical edges for contour for visualization we traverse all stripes and find all x_union intervals and use draw the vertical edges using x.top and x.bottom of each interval and y interval of each stripe.
+							</li>
+							<li>
+								Issues regarding multiple x and y coordinates are handles appropriately as mentioned in above section.
+							</li>
+						</ul>
+
+
+
+					</p>
+
+
+					<h2>Experimental Results</h2>
+<p> We have used smaller test cases for visualization and to ensure correctness of algorithm. For time analysis and robustness we've used Larger Test cases in next section.</p>
+<h3>Execution Time for smaller test case takes = 1 -3 milliseconds</h3>
+
+					<div class="row">
+
+						<div class="column">
+							<h3> Input 1</h3>
+
+							<img src='MyOutputs/out1.JPG'style= " width : 500px; height : 300px;">
+
+						</div>
+						<div class="column">
+							<h3> Input 2</h3>
+							<img src='MyOutputs/out2.JPG' style="width : 500px; height : 300px;">
+
+						</div>
+						<div class="row">
+
+							<div class="column">
+								<h3> Input 3</h3>
+
+								<img src='MyOutputs/out3.JPG'style= " width : 500px; height : 300px;">
+
+							</div>
+							<div class="column">
+								<h3> Input 4</h3>
+								<img src='MyOutputs/out4.JPG' style="width : 500px; height : 300px;">
+							</div>
+							<div class="row">
+								<div class="column">
+									<h3> Input 5</h3>
+									<img src='MyOutputs/out5.JPG'style= " width : 500px; height : 300px;">
+								</div>
+							</div>
+							<br/>
+							<h2>Timing Analysis</h2>
+							<p>
+								For generating stripe for each problem we can write the following recursive relation <br>
+                                <b>T(n) = 2T(n/2) + O(n)</b><br>
+                                As n=1 base case do in constant time T(1) =O(1).
+                                <br>
+                                Hence by solving T(n) = O(nlogn) 
+                                For measure problem we use extra O(n) to find measure and For contour problem extra (nlogn +p)<br>
+                                Thus for measure = O(nlogn) and O(nlogn + p) for contour
+                                <br>
+                                NOTE: We have used data structure set in code for finding union of y projection which changes complexity to T(nlog^2n) because of logn insertion time which can be improve using a linked list and O(n) while merging.
+                                <br>
+                                <h3>Time analysis Table</h3>
+                                
+                                <img src='TimeAnalysis.JPG'style= " width : 500px; height : 300px;">
+                            <p> Note: Values in seconds
+							</p>
+						</body>
+						</html>
+<h2>References</h2>
+
+1. "Optimal Divide-and-Conquer to Compute Measure and Contour for a Set of Iso-Rectangles" by Ralf Hartmut Guting

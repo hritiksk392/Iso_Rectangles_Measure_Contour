@@ -1,0 +1,57 @@
+\doxysection{geo.\+h}
+\label{geo_8h_source}\index{New/geo.h@{New/geo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include <bits/stdc++.h>}}
+\DoxyCodeLine{00002 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#define interval pair<int,int> }}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#define Point pair<int,int>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#define inf INT\_MAX}}
+\DoxyCodeLine{00007 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }ctree\{}
+\DoxyCodeLine{00009     \textcolor{keywordtype}{int} x;  }
+\DoxyCodeLine{00011     \textcolor{keywordtype}{char} side;}
+\DoxyCodeLine{00012     \textcolor{keyword}{struct }ctree *left;}
+\DoxyCodeLine{00013     \textcolor{keyword}{struct }ctree *right;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \}ctree;}
+\DoxyCodeLine{00017 \textcolor{keywordtype}{void} getnewNode(ctree **root,\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} side,ctree * left,ctree*right);}
+\DoxyCodeLine{00019 \textcolor{keywordtype}{void} preorder(ctree *root);}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00025 \textcolor{keywordtype}{void}  gHelper(ctree *root, vector<int> \&t);}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00031 \textcolor{keywordtype}{void} getOrder(ctree*root, set<interval> \&temp);}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00036 \textcolor{keyword}{class }LineSeg\{}
+\DoxyCodeLine{00037     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038     interval intr;}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{int} coord;}
+\DoxyCodeLine{00041     LineSeg(interval x,\textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{00043     \textcolor{keywordtype}{void} show();}
+\DoxyCodeLine{00044 \};}
+\DoxyCodeLine{00049 \textcolor{keyword}{class }rectangle\{}
+\DoxyCodeLine{00050     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{int} x\_left;}
+\DoxyCodeLine{00052     \textcolor{keywordtype}{int} x\_right;}
+\DoxyCodeLine{00053     \textcolor{keywordtype}{int} y\_bottom;}
+\DoxyCodeLine{00054     \textcolor{keywordtype}{int} y\_top;}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     interval x\_interval;}
+\DoxyCodeLine{00057     interval y\_interval;}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     rectangle(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\textcolor{keywordtype}{int} z,\textcolor{keywordtype}{int} a);}
+\DoxyCodeLine{00060     rectangle(interval x,interval  y);}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062 \};}
+\DoxyCodeLine{00067 \textcolor{keyword}{class }edge\{}
+\DoxyCodeLine{00068     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070     interval intr;}
+\DoxyCodeLine{00071     \textcolor{keywordtype}{int} coord;}
+\DoxyCodeLine{00072     \textcolor{keywordtype}{char} side;}
+\DoxyCodeLine{00073     \textcolor{keywordtype}{int} uid;}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     edge(interval i, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{char} s,\textcolor{keywordtype}{int} ui);}
+\DoxyCodeLine{00077     \textcolor{keywordtype}{void} show();}
+\DoxyCodeLine{00078 \};}
+\DoxyCodeLine{00079 }
+
+\end{DoxyCode}

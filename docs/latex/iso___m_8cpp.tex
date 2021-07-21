@@ -1,0 +1,234 @@
+\doxysection{New/iso\+\_\+M.cpp File Reference}
+\label{iso___m_8cpp}\index{New/iso\_M.cpp@{New/iso\_M.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}helper.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ stripe}
+\begin{DoxyCompactList}\small\item\em Stripe for Contour Problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ pb}~\textbf{ push\+\_\+back}
+\item 
+\#define \textbf{ IOS}~ios\+::sync\+\_\+with\+\_\+stdio(0); cin.\+tie(0); cout.\+tie(0);
+\item 
+\#define \textbf{ endl}~\char`\"{}\textbackslash{}n\char`\"{}
+\item 
+\#define \textbf{ interval}~pair$<$int,int$>$
+\item 
+\#define \textbf{ Point}~pair$<$int,int$>$
+\item 
+\#define \textbf{ inf}~INT\+\_\+\+MAX
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \textbf{ stripe} $>$ \textbf{ cpy} (vector$<$ \textbf{ stripe} $>$S, set$<$ int $>$ P, \textbf{ interval} x\+\_\+int)
+\begin{DoxyCompactList}\small\item\em CPY function introduces a finer partition for given set of Stripe from Points given in set P. \end{DoxyCompactList}\item 
+void \textbf{ blacken} (vector$<$ \textbf{ stripe} $>$ \&S, list$<$ pair$<$ \textbf{ interval}, int $>$$>$ J)
+\begin{DoxyCompactList}\small\item\em If For Sleft There exists a Right edge which does no have it\textquotesingle{}s partner in Sleft then it\textquotesingle{}s partner must be in SRight. \end{DoxyCompactList}\item 
+vector$<$ \textbf{ stripe} $>$ \textbf{ concat} (vector$<$ \textbf{ stripe} $>$ S1, vector$<$ \textbf{ stripe} $>$ S2, set$<$ int $>$ P, \textbf{ interval} x\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Concatenate two vector of Stripes ~\newline
+As both stripe will have same partition of Y coordinates and sorted from CPY() method it can be done in 1 loop for all partitions ~\newline
+As x\+\_\+union is a real number then we can assign sfinal[i] = S1[i].x\+\_\+union + S2[i].x\+\_\+union ~\newline
+. \end{DoxyCompactList}\item 
+void \textbf{ get\+Stripe} (vector$<$ \textbf{ edge} $>$ \&V, \textbf{ interval} x\+\_\+ext, list$<$ pair$<$ \textbf{ interval}, int $>$$>$ \&L, list$<$ pair$<$ \textbf{ interval}, int $>$$>$ \&R, set$<$ int $>$ \&P, vector$<$ \textbf{ stripe} $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Function to generate stripes for Measure problem. \end{DoxyCompactList}\item 
+void \textbf{ r\+Dac} (vector$<$ \textbf{ rectangle} $>$ Re, vector$<$ \textbf{ stripe} $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Rectangle\+\_\+\+DAC function for Initialization of frames. \end{DoxyCompactList}\item 
+long long \textbf{ measure} (vector$<$ \textbf{ stripe} $>$ S)
+\begin{DoxyCompactList}\small\item\em To find Measure of n iso rectangle. \end{DoxyCompactList}\item 
+int32\+\_\+t \textbf{ main} ()
+\begin{DoxyCompactList}\small\item\em Driver function for Measure Problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\label{iso___m_8cpp_a600eaf353befc174637855795f12d258}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!endl@{endl}}
+\index{endl@{endl}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{endl}
+{\footnotesize\ttfamily \#define endl~\char`\"{}\textbackslash{}n\char`\"{}}
+
+\mbox{\label{iso___m_8cpp_a536b216e2e7c9641d4e232ad96dee3c2}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!inf@{inf}}
+\index{inf@{inf}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{inf}
+{\footnotesize\ttfamily \#define inf~INT\+\_\+\+MAX}
+
+\mbox{\label{iso___m_8cpp_a7fe55923d8ca3235bd6837c3e38c06ff}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!interval@{interval}}
+\index{interval@{interval}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{interval}
+{\footnotesize\ttfamily \#define interval~pair$<$int,int$>$}
+
+\mbox{\label{iso___m_8cpp_aeac4bbd2fc6768c57507920a89393b29}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!IOS@{IOS}}
+\index{IOS@{IOS}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{IOS}
+{\footnotesize\ttfamily \#define IOS~ios\+::sync\+\_\+with\+\_\+stdio(0); cin.\+tie(0); cout.\+tie(0);}
+
+\mbox{\label{iso___m_8cpp_a276c5a0e984cf60015b27252fe04fe6b}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!pb@{pb}}
+\index{pb@{pb}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{pb}
+{\footnotesize\ttfamily \#define pb~\textbf{ push\+\_\+back}}
+
+\mbox{\label{iso___m_8cpp_a264185c815a47814791f68e7c6da85ad}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!Point@{Point}}
+\index{Point@{Point}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{Point}
+{\footnotesize\ttfamily \#define Point~pair$<$int,int$>$}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{iso___m_8cpp_a8bb410f4b654a7df9092962d2453e2af}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!blacken@{blacken}}
+\index{blacken@{blacken}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{blacken()}
+{\footnotesize\ttfamily void blacken (\begin{DoxyParamCaption}\item[{vector$<$ \textbf{ stripe} $>$ \&}]{S,  }\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$}]{J }\end{DoxyParamCaption})}
+
+
+
+If For Sleft There exists a Right edge which does no have it\textquotesingle{}s partner in Sleft then it\textquotesingle{}s partner must be in SRight. 
+
+Hence the Right edge\textquotesingle{}s xunion = x\+\_\+interval ~\newline
+ Similarly if Sright has a Left edge which does not have it\textquotesingle{}s partner, then that stripe must be blackened ~\newline
+Blacken function given a certain list of intervals will blacken those stripes which contain them ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em S} & \+: Vector of stripe to be applied \\
+\hline
+{\em J} & \+: list of intervals to blackened with augemented Unique Id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+blackens the S stripe appropriately 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+As the interval J is sorted and vector of Stripe is also sorted with Y coordinate it can be done in O(n) time using two pointer techniques 
+\end{DoxyNote}
+\mbox{\label{iso___m_8cpp_a47a4a743e115ab9dff15e6109f8bf49f}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!concat@{concat}}
+\index{concat@{concat}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{concat()}
+{\footnotesize\ttfamily vector$<$\textbf{ stripe}$>$ concat (\begin{DoxyParamCaption}\item[{vector$<$ \textbf{ stripe} $>$}]{S1,  }\item[{vector$<$ \textbf{ stripe} $>$}]{S2,  }\item[{set$<$ int $>$}]{P,  }\item[{\textbf{ interval}}]{x\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+Concatenate two vector of Stripes ~\newline
+As both stripe will have same partition of Y coordinates and sorted from CPY() method it can be done in 1 loop for all partitions ~\newline
+As x\+\_\+union is a real number then we can assign sfinal[i] = S1[i].x\+\_\+union + S2[i].x\+\_\+union ~\newline
+. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S1} & \+: Stripe Vector \\
+\hline
+{\em S2} & \+: stripe Vector \\
+\hline
+{\em P} & \+: Set of all Y coordinates \\
+\hline
+{\em x\+\_\+int} & \+: X interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+blackens the S stripe appropriately ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\label{iso___m_8cpp_a1d890103f0a9522164828a292c92726e}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!cpy@{cpy}}
+\index{cpy@{cpy}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{cpy()}
+{\footnotesize\ttfamily vector$<$\textbf{ stripe}$>$ cpy (\begin{DoxyParamCaption}\item[{vector$<$ \textbf{ stripe} $>$}]{S,  }\item[{set$<$ int $>$}]{P,  }\item[{\textbf{ interval}}]{x\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+CPY function introduces a finer partition for given set of Stripe from Points given in set P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & \+: Vector of stripe to be applied \\
+\hline
+{\em P} & \+: all Y points projection Set \\
+\hline
+{\em x\+\_\+int} & \+: Interval of x for given stripe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sfinal \+: vector of Stripe with finer y partition but same x\+\_\+union. 
+\end{DoxyReturn}
+\mbox{\label{iso___m_8cpp_a2dd64ebb6491ff2a3655253f4b53fc10}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!getStripe@{getStripe}}
+\index{getStripe@{getStripe}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{getStripe()}
+{\footnotesize\ttfamily void get\+Stripe (\begin{DoxyParamCaption}\item[{vector$<$ \textbf{ edge} $>$ \&}]{V,  }\item[{\textbf{ interval}}]{x\+\_\+ext,  }\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$ \&}]{L,  }\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$ \&}]{R,  }\item[{set$<$ int $>$ \&}]{P,  }\item[{vector$<$ \textbf{ stripe} $>$ \&}]{S }\end{DoxyParamCaption})}
+
+
+
+Function to generate stripes for Measure problem. 
+
+Creates horizontal stripes in time O(nlogn) time using divide n conquer approach by dividing given set of Verical edges into 2 with equal size. ~\newline
+ BASE CASE \+:= Given vector of Vertical Edge has only 1 element then create Stripe for single Edge ~\newline
+ DIVIDE \+: Divide the vector of vertical edges into 2 by selecting median xm ~\newline
+ CONQUER \+: Solve seperately for 2 sets of Vertical edges ~\newline
+ MERGE \+: Merge the Stripe by copying, blackening and concatenating the two different Stripes 
+\begin{DoxyParams}{Parameters}
+{\em V} & \+: Vector of Vertical Edges \\
+\hline
+{\em x\+\_\+ext} & x interval of stripes \\
+\hline
+{\em L} & \+: Contains the y-\/projections of all left edges whose partner is not in V. \\
+\hline
+{\em R} & \+: Contains the y-\/projections of all right edges whose partner is not in V. \\
+\hline
+{\em P} & \+: contains the y-\/projection of all endpoints of line segments in V plus the flame boundaries in y-\/direction, namely -\/inf, +inf \\
+\hline
+{\em S} & Output vector of Stripes \\
+\hline
+\end{DoxyParams}
+\mbox{\label{iso___m_8cpp_a196718f834091385d38586a0ce4009dc}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!main@{main}}
+\index{main@{main}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily int32\+\_\+t main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Driver function for Measure Problem. 
+
+Input format \+: First line n \+: number of iso rectangles ~\newline
+ Next n lines contain x1 x2 y1 y2 which is the x interval= [x1,x2] and y interval = [y1,y2] for ith rectangle \mbox{\label{iso___m_8cpp_af85e934311001e9b4065d4549008d509}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!measure@{measure}}
+\index{measure@{measure}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{measure()}
+{\footnotesize\ttfamily long long measure (\begin{DoxyParamCaption}\item[{vector$<$ \textbf{ stripe} $>$}]{S }\end{DoxyParamCaption})}
+
+
+
+To find Measure of n iso rectangle. 
+
+In a given stripe the x union contains x\+\_\+interval of area intersected by rectangles. ~\newline
+ In each stripe the width = y\+\_\+interval and summation of all disjoint x\+\_\+interval = xunion ~\newline
+\begin{DoxyNote}{Note}
+\+: Area covered by each stripe = (y\+\_\+interval) $\ast$ (x\+\_\+union) and hence sum for all to get Union area or final measure 
+\end{DoxyNote}
+\mbox{\label{iso___m_8cpp_a0762dd913876e2d924ed419ab7c645ba}} 
+\index{iso\_M.cpp@{iso\_M.cpp}!rDac@{rDac}}
+\index{rDac@{rDac}!iso\_M.cpp@{iso\_M.cpp}}
+\doxysubsubsection{rDac()}
+{\footnotesize\ttfamily void r\+Dac (\begin{DoxyParamCaption}\item[{vector$<$ \textbf{ rectangle} $>$}]{Re,  }\item[{vector$<$ \textbf{ stripe} $>$ \&}]{S }\end{DoxyParamCaption})}
+
+
+
+Rectangle\+\_\+\+DAC function for Initialization of frames. 
+
+Vertical Edges are sorted and Frame with x interval =\{-\/inf, inf\} and y interval =\{-\/inf,inf \} is initiated. 
+\begin{DoxyParams}{Parameters}
+{\em Re} & vector of all iso rectangles \\
+\hline
+{\em S} & \+: Output vector of Stripe \\
+\hline
+\end{DoxyParams}

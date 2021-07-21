@@ -1,0 +1,214 @@
+\doxysection{New/helper.cpp File Reference}
+\label{helper_8cpp}\index{New/helper.cpp@{New/helper.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}geo.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ interval}~pair$<$int,int$>$
+\item 
+\#define \textbf{ endl}~\char`\"{}\textbackslash{}n\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ pair$<$ \textbf{ interval}, int $>$ $>$ \textbf{ intersect} (list$<$ pair$<$ \textbf{ interval}, int $>$$>$ s1, list$<$ pair$<$ \textbf{ interval}, int $>$$>$ s2)
+\begin{DoxyCompactList}\small\item\em Function to find intersection of two lists. \end{DoxyCompactList}\item 
+list$<$ pair$<$ \textbf{ interval}, int $>$ $>$ \textbf{ uni} (list$<$ pair$<$ \textbf{ interval}, int $>$$>$ s1, list$<$ pair$<$ \textbf{ interval}, int $>$$>$ s2)
+\begin{DoxyCompactList}\small\item\em Function to find union of two lists. \end{DoxyCompactList}\item 
+list$<$ pair$<$ \textbf{ interval}, int $>$ $>$ \textbf{ diff} (list$<$ pair$<$ \textbf{ interval}, int $>$$>$ s1, list$<$ pair$<$ \textbf{ interval}, int $>$$>$ s2)
+\begin{DoxyCompactList}\small\item\em Function to find set difference. \end{DoxyCompactList}\item 
+set$<$ \textbf{ interval} $>$ \textbf{ intervals} (set$<$ int $>$ c)
+\begin{DoxyCompactList}\small\item\em Converts set of coordinates to set of interval. \end{DoxyCompactList}\item 
+set$<$ \textbf{ interval} $>$ \textbf{ partition} (set$<$ int $>$ y)
+\begin{DoxyCompactList}\small\item\em Interval Projection of all Y coordinates. \end{DoxyCompactList}\item 
+vector$<$ \textbf{ edge} $>$ \textbf{ get\+VEdge} (vector$<$ \textbf{ rectangle} $>$ R)
+\begin{DoxyCompactList}\small\item\em Gets all vertical edges of all rectangles. \end{DoxyCompactList}\item 
+bool \textbf{ comp\+Ed} (\textbf{ edge} e1, \textbf{ edge} e2)
+\begin{DoxyCompactList}\small\item\em Comparator function for vertical sorting edges according to x coordinates and if two edges have same x coordinate then Left edge comes first ~\newline
+ \end{DoxyCompactList}\item 
+bool \textbf{ compH} (\textbf{ edge} e1, \textbf{ edge} e2)
+\begin{DoxyCompactList}\small\item\em Comparator function for horizontal sorting edges according to y coordinates and if two edges have same y coordinate then Bottom edge comes first ~\newline
+ \end{DoxyCompactList}\item 
+vector$<$ \textbf{ edge} $>$ \textbf{ get\+HEdge} (vector$<$ \textbf{ rectangle} $>$ R)
+\begin{DoxyCompactList}\small\item\em Gets all horizontal edges of all rectangles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\label{helper_8cpp_a600eaf353befc174637855795f12d258}} 
+\index{helper.cpp@{helper.cpp}!endl@{endl}}
+\index{endl@{endl}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{endl}
+{\footnotesize\ttfamily \#define endl~\char`\"{}\textbackslash{}n\char`\"{}}
+
+\mbox{\label{helper_8cpp_a7fe55923d8ca3235bd6837c3e38c06ff}} 
+\index{helper.cpp@{helper.cpp}!interval@{interval}}
+\index{interval@{interval}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{interval}
+{\footnotesize\ttfamily \#define interval~pair$<$int,int$>$}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{helper_8cpp_a9e02a3e9c029e32d214ee20f9fa67bf7}} 
+\index{helper.cpp@{helper.cpp}!compEd@{compEd}}
+\index{compEd@{compEd}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{compEd()}
+{\footnotesize\ttfamily bool comp\+Ed (\begin{DoxyParamCaption}\item[{\textbf{ edge}}]{e1,  }\item[{\textbf{ edge}}]{e2 }\end{DoxyParamCaption})}
+
+
+
+Comparator function for vertical sorting edges according to x coordinates and if two edges have same x coordinate then Left edge comes first ~\newline
+ 
+
+\mbox{\label{helper_8cpp_ab5c1dec9b60046408899ade3a2c172af}} 
+\index{helper.cpp@{helper.cpp}!compH@{compH}}
+\index{compH@{compH}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{compH()}
+{\footnotesize\ttfamily bool compH (\begin{DoxyParamCaption}\item[{\textbf{ edge}}]{e1,  }\item[{\textbf{ edge}}]{e2 }\end{DoxyParamCaption})}
+
+
+
+Comparator function for horizontal sorting edges according to y coordinates and if two edges have same y coordinate then Bottom edge comes first ~\newline
+ 
+
+\mbox{\label{helper_8cpp_a3df20cda4f9179bdcaee5fbcdb18c4f3}} 
+\index{helper.cpp@{helper.cpp}!diff@{diff}}
+\index{diff@{diff}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{diff()}
+{\footnotesize\ttfamily list$<$pair$<$\textbf{ interval},int$>$ $>$ diff (\begin{DoxyParamCaption}\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$}]{s1,  }\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Function to find set difference. 
+
+This function takes 2 sorted list and find intersecting elements using \begin{DoxySeeAlso}{See also}
+\doxyref{intersect(list$<$pair$<$interval,int$>$$>$ s1,list$<$pair$<$interval,int$>$$>$ s2)}{p.}{helper_8h_a08eadd316cdb8fe9956cc05708e337bd} and remove the common elements from S1 list. Takes O(n)time using two pointer stratefy 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em s1,sorted} & List of \{interval, rectangle No.\} \\
+\hline
+{\em s2,sorted} & List of \{interval, rectangle No.\} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sans\+: Sorted List of set difference {\bfseries{sans = S1 -\/ S2}} 
+\end{DoxyReturn}
+Using Intersect Function\mbox{\label{helper_8cpp_a5490b11903119e0b13d37ad2af9d0ff1}} 
+\index{helper.cpp@{helper.cpp}!getHEdge@{getHEdge}}
+\index{getHEdge@{getHEdge}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{getHEdge()}
+{\footnotesize\ttfamily vector$<$\textbf{ edge}$>$ get\+HEdge (\begin{DoxyParamCaption}\item[{vector$<$ \textbf{ rectangle} $>$}]{R }\end{DoxyParamCaption})}
+
+
+
+Gets all horizontal edges of all rectangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & vector of rectangles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of all horizontal edges ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\label{helper_8cpp_af00a5799657df2775779afae423bfc16}} 
+\index{helper.cpp@{helper.cpp}!getVEdge@{getVEdge}}
+\index{getVEdge@{getVEdge}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{getVEdge()}
+{\footnotesize\ttfamily vector$<$\textbf{ edge}$>$ get\+VEdge (\begin{DoxyParamCaption}\item[{vector$<$ \textbf{ rectangle} $>$}]{R }\end{DoxyParamCaption})}
+
+
+
+Gets all vertical edges of all rectangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & vector of rectangles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of all vertical edges ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\label{helper_8cpp_a08eadd316cdb8fe9956cc05708e337bd}} 
+\index{helper.cpp@{helper.cpp}!intersect@{intersect}}
+\index{intersect@{intersect}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{intersect()}
+{\footnotesize\ttfamily list$<$pair$<$\textbf{ interval},int$>$ $>$ intersect (\begin{DoxyParamCaption}\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$}]{s1,  }\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Function to find intersection of two lists. 
+
+This function takes 2 sorted list as an input and find elements common in both the lists and output them as a seperate list in O(n+m) time 
+\begin{DoxyParams}{Parameters}
+{\em s1,sorted} & List of \{interval, rectangle No.\} \\
+\hline
+{\em s2,sorted} & List of \{interval, rectangle No.\} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sans\+: Sorted List of intersection of s1 and s2 
+\end{DoxyReturn}
+\mbox{\label{helper_8cpp_a29ce3d0650a03556b7723758d66e757b}} 
+\index{helper.cpp@{helper.cpp}!intervals@{intervals}}
+\index{intervals@{intervals}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{intervals()}
+{\footnotesize\ttfamily set$<$\textbf{ interval}$>$ intervals (\begin{DoxyParamCaption}\item[{set$<$ int $>$}]{c }\end{DoxyParamCaption})}
+
+
+
+Converts set of coordinates to set of interval. 
+
+for a given set of points say \{x1,x2,x3,.....\} to intervals \+: \{\{x1,x2\} ,\{x2,x3\},\{x3,x4\} ,.... \} 
+\begin{DoxyParams}{Parameters}
+{\em c,set} & of coords ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+set of intervals 
+\end{DoxyReturn}
+\mbox{\label{helper_8cpp_adec0555acb54f51d706dfa0bb72ff7d5}} 
+\index{helper.cpp@{helper.cpp}!partition@{partition}}
+\index{partition@{partition}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{partition()}
+{\footnotesize\ttfamily set$<$\textbf{ interval}$>$ partition (\begin{DoxyParamCaption}\item[{set$<$ int $>$}]{y }\end{DoxyParamCaption})}
+
+
+
+Interval Projection of all Y coordinates. 
+
+for a given set of points say \{y1,y2,y3,.....\} to intervals \+: \{\{y1,y2\} ,\{y2,y3\},\{y3,y4\} ,.... \} 
+\begin{DoxyParams}{Parameters}
+{\em c,set} & of coords ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+set of intervals 
+\end{DoxyReturn}
+\mbox{\label{helper_8cpp_a37ec1acca25f6858a264811caa855232}} 
+\index{helper.cpp@{helper.cpp}!uni@{uni}}
+\index{uni@{uni}!helper.cpp@{helper.cpp}}
+\doxysubsubsection{uni()}
+{\footnotesize\ttfamily list$<$pair$<$\textbf{ interval},int$>$ $>$ uni (\begin{DoxyParamCaption}\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$}]{s1,  }\item[{list$<$ pair$<$ \textbf{ interval}, int $>$$>$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Function to find union of two lists. 
+
+This function takes 2 sorted list as an input and find the total union of those 2 lists. It merges the two list by maintaining two pointers one for each list and compares element pointed by that two pointers in O(n+m) time 
+\begin{DoxyParams}{Parameters}
+{\em s1,sorted} & List of \{interval, rectangle No.\} \\
+\hline
+{\em s2,sorted} & List of \{interval, rectangle No.\} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sans\+: Sorted List of Union of s1 and s2 
+\end{DoxyReturn}
+Merge Function uses O(n) time to merge 2 sorted List

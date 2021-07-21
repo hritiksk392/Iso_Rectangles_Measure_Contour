@@ -1,0 +1,133 @@
+\doxysection{New/geo.h File Reference}
+\label{geo_8h}\index{New/geo.h@{New/geo.h}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ ctree}
+\begin{DoxyCompactList}\small\item\em Ctree tree structure BST for x\+\_\+union of stripes for contour calculation. \end{DoxyCompactList}\item 
+class \textbf{ Line\+Seg}
+\begin{DoxyCompactList}\small\item\em Class for line segment. \end{DoxyCompactList}\item 
+class \textbf{ rectangle}
+\begin{DoxyCompactList}\small\item\em Class to show a single Rectangle. \end{DoxyCompactList}\item 
+class \textbf{ edge}
+\begin{DoxyCompactList}\small\item\em Edge Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ interval}~pair$<$int,int$>$
+\item 
+\#define \textbf{ Point}~pair$<$int,int$>$
+\item 
+\#define \textbf{ inf}~INT\+\_\+\+MAX
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ ctree} \textbf{ ctree}
+\begin{DoxyCompactList}\small\item\em Ctree tree structure BST for x\+\_\+union of stripes for contour calculation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ getnew\+Node} (\textbf{ ctree} $\ast$$\ast$root, int x, int side, \textbf{ ctree} $\ast$left, \textbf{ ctree} $\ast$right)
+\begin{DoxyCompactList}\small\item\em To create a new node for ctree given member values. \end{DoxyCompactList}\item 
+void \textbf{ preorder} (\textbf{ ctree} $\ast$root)
+\begin{DoxyCompactList}\small\item\em Preorder Traversal of ctree. \end{DoxyCompactList}\item 
+void \textbf{ g\+Helper} (\textbf{ ctree} $\ast$root, vector$<$ int $>$ \&t)
+\begin{DoxyCompactList}\small\item\em A helper function for ctree to get leaf values into vector for. \end{DoxyCompactList}\item 
+void \textbf{ get\+Order} (\textbf{ ctree} $\ast$root, set$<$ \textbf{ interval} $>$ \&temp)
+\begin{DoxyCompactList}\small\item\em To get disjoint interval set for a given stripe\textquotesingle{}s ctree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\label{geo_8h_a536b216e2e7c9641d4e232ad96dee3c2}} 
+\index{geo.h@{geo.h}!inf@{inf}}
+\index{inf@{inf}!geo.h@{geo.h}}
+\doxysubsubsection{inf}
+{\footnotesize\ttfamily \#define inf~INT\+\_\+\+MAX}
+
+\mbox{\label{geo_8h_a7fe55923d8ca3235bd6837c3e38c06ff}} 
+\index{geo.h@{geo.h}!interval@{interval}}
+\index{interval@{interval}!geo.h@{geo.h}}
+\doxysubsubsection{interval}
+{\footnotesize\ttfamily \#define interval~pair$<$int,int$>$}
+
+\mbox{\label{geo_8h_a264185c815a47814791f68e7c6da85ad}} 
+\index{geo.h@{geo.h}!Point@{Point}}
+\index{Point@{Point}!geo.h@{geo.h}}
+\doxysubsubsection{Point}
+{\footnotesize\ttfamily \#define Point~pair$<$int,int$>$}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\label{geo_8h_a0c796404aced5ab4a7479edfbc2cc847}} 
+\index{geo.h@{geo.h}!ctree@{ctree}}
+\index{ctree@{ctree}!geo.h@{geo.h}}
+\doxysubsubsection{ctree}
+{\footnotesize\ttfamily typedef struct \textbf{ ctree} \textbf{ ctree}}
+
+
+
+Ctree tree structure BST for x\+\_\+union of stripes for contour calculation. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{geo_8h_a7111c88ffa0bfb300f0ecffac4a62713}} 
+\index{geo.h@{geo.h}!getnewNode@{getnewNode}}
+\index{getnewNode@{getnewNode}!geo.h@{geo.h}}
+\doxysubsubsection{getnewNode()}
+{\footnotesize\ttfamily void getnew\+Node (\begin{DoxyParamCaption}\item[{\textbf{ ctree} $\ast$$\ast$}]{root,  }\item[{int}]{x,  }\item[{int}]{side,  }\item[{\textbf{ ctree} $\ast$}]{left,  }\item[{\textbf{ ctree} $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+
+To create a new node for ctree given member values. 
+
+\mbox{\label{geo_8h_adfb416d0e2df9f20f3c25fc6ba239d13}} 
+\index{geo.h@{geo.h}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!geo.h@{geo.h}}
+\doxysubsubsection{getOrder()}
+{\footnotesize\ttfamily void get\+Order (\begin{DoxyParamCaption}\item[{\textbf{ ctree} $\ast$}]{root,  }\item[{set$<$ \textbf{ interval} $>$ \&}]{temp }\end{DoxyParamCaption})}
+
+
+
+To get disjoint interval set for a given stripe\textquotesingle{}s ctree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & \+: Root tree \\
+\hline
+{\em temp} & \+: output set of intervals \\
+\hline
+\end{DoxyParams}
+\mbox{\label{geo_8h_aff293e697f444b5826daf5d71b0952f7}} 
+\index{geo.h@{geo.h}!gHelper@{gHelper}}
+\index{gHelper@{gHelper}!geo.h@{geo.h}}
+\doxysubsubsection{gHelper()}
+{\footnotesize\ttfamily void g\+Helper (\begin{DoxyParamCaption}\item[{\textbf{ ctree} $\ast$}]{root,  }\item[{vector$<$ int $>$ \&}]{t }\end{DoxyParamCaption})}
+
+
+
+A helper function for ctree to get leaf values into vector for. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{get\+Order(ctree$\ast$root, set$<$interval$>$ \&temp)}{p.}{geo_8h_adfb416d0e2df9f20f3c25fc6ba239d13};
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em root} & \+: root of ctree \\
+\hline
+{\em t} & \+: output vector \\
+\hline
+\end{DoxyParams}
+\mbox{\label{geo_8h_a5b7b8c853873093a2dd1bc2bfda49b6e}} 
+\index{geo.h@{geo.h}!preorder@{preorder}}
+\index{preorder@{preorder}!geo.h@{geo.h}}
+\doxysubsubsection{preorder()}
+{\footnotesize\ttfamily void preorder (\begin{DoxyParamCaption}\item[{\textbf{ ctree} $\ast$}]{root }\end{DoxyParamCaption})}
+
+
+
+Preorder Traversal of ctree. 
+
